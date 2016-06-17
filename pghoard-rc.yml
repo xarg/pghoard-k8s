@@ -1,0 +1,21 @@
+apiVersion: v1  
+kind: ReplicationController  
+metadata:  
+  name: pghoard
+spec:  
+  replicas: 1
+  selector:
+    app: pghoard
+  template:
+    metadata:
+      labels:
+        app: pghoard
+    spec:
+        containers:
+        - name: pghoard
+          env:
+            - name: REPLICA_USER
+              value: "replicant"
+            - name: REPLICA_PASSWORD
+              value: "The tortoise lays on its back, its belly baking in the hot sun, beating its legs trying to turn itself over. But it can't. Not with out your help. But you're not helping."
+          image: gcr.io/your-project/pghoard:latest
