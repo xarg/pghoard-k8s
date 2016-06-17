@@ -1,0 +1,33 @@
+{
+    "backup_location": "/data",
+    "backup_sites": {
+        "default": {
+            "active_backup_mode": "pg_receivexlog",
+            "basebackup_count": 2,
+            "basebackup_interval_hours": 24,
+            "nodes": [
+                {
+                    "host": "YOUR-PG-HOST",
+                    "port": 5432,
+                    "user": "replica",
+                    "password": "replica",
+                    "application_name": "pghoard"
+                }
+            ],
+            "object_storage": {
+                "aws_access_key_id": "REPLACE",
+                "aws_secret_access_key": "REPLACE",
+                "bucket_name": "REPLACE",
+                "region": "us-east-1",
+                "storage_type": "s3"
+            },
+            "pg_bin_directory": "/usr/bin"
+        }
+    },
+    "http_address": "127.0.0.1",
+    "http_port": 16000,
+    "log_level": "INFO",
+    "syslog": false,
+    "syslog_address": "/dev/log",
+    "syslog_facility": "local2"
+}
