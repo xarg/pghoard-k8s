@@ -1,5 +1,6 @@
 FROM alpine:3.4
 
+ENV REPLICA_USER "replica"
 ENV REPLICA_PASSWORD "replica"
 
 RUN apk add --no-cache \
